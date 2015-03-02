@@ -14,7 +14,8 @@ class GroupmeBot(SnapchatBot):
         On snap, upload image to groupme image service, then use groupme 
         image URL to post it to the group
         """
-        # check media type. currently only supports photos.
+        # Make sure the snap is an image. GroupMe doesn't expose an API for
+        # uploading videos.
         # todo: magic number!
         if snap.media_type != 0:
             # not an image. abort.
